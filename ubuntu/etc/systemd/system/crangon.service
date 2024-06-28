@@ -1,0 +1,23 @@
+[Unit]
+Description=crangon
+# After=nginx.service network.target
+After=network.target
+
+[Service]
+Type=simple
+TimeoutStartSec=0
+
+ExecStart=/home/ubuntu/scripts/run-crangon.sh
+WorkingDirectory=/home/ubuntu/crangon
+
+Restart=on-failure
+RestartSec=5s
+
+KillMode=process
+KillSignal=SIGTERM
+
+PIDFile=/run/crangon.pid
+
+[Install]
+WantedBy=multi-user.target
+Alias=crangon.service
