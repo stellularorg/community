@@ -2,10 +2,25 @@
 # networking is manual
 
 # deps
-sudo apt install build-essential pkg-config unzip
+sudo apt install build-essential pkg-config unzip libssl-dev nodejs npm
 
+cd $HOME
 curl -fsSL https://bun.sh/install | bash
+echo "export BUN_INSTALL=\"$HOME/.bun\"\nexport PATH=\"$BUN_INSTALL/bin:\$PATH\"" >> .bashrc
+source ~/.bashrc
+
+# use bunx if we have it, alias npx as bunx if we don't
+if [ ! -f $HOME/.bun/bin/bunx ]; then
+    # ln -s $HOME/.bun/bin/bun $HOME/.bun/bin/bunx
+    ln -s /usr/bin/npx $HOME/.bun/bin/bunx
+    echo "bunx alias created (npx)"
+else
+    echo "bunx is fine"
+fi
+
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+. "$HOME/.cargo/env"
+
 cargo install just
 
 # redis
@@ -13,7 +28,7 @@ sudo snap install redis
 sudo systemctl enable --now redis-server
 
 # guppy
-cd /home/ubuntu
+cd $HOME
 git clone https://github.com/stellularorg/guppy
 cd guppy
 
@@ -22,16 +37,16 @@ bun i
 just build sqlite
 
 # crangon
-cd /home/ubuntu
+cd $HOME
 git clone https://github.com/stellularorg/crangon
 cd crangon
 
-ln -s /home/ubuntu/guppy/main.db main.db
+ln -s $HOME/guppy/main.db main.db
 bun i
 just build sqlite
 
 # scripts
-cd /home/ubuntu
+cd $HOME
 mkdir scripts
 cd scripts
 
@@ -46,5 +61,5 @@ sudo wget https://github.com/stellularorg/community/raw/master/ubuntu/etc/system
 sudo wget https://github.com/stellularorg/community/raw/master/ubuntu/etc/systemd/system/guppy.service
 
 # remove self
-cd /home/ubuntu
+cd $HOME
 rm setup.sh
