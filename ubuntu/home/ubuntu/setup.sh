@@ -44,3 +44,7 @@ chmod +x run-guppy.sh
 cd /etc/systemd/system
 sudo wget https://github.com/stellularorg/community/raw/master/ubuntu/etc/systemd/system/crangon.service
 sudo wget https://github.com/stellularorg/community/raw/master/ubuntu/etc/systemd/system/guppy.service
+
+# remove self
+cd /home/ubuntu
+rm setup.sh
