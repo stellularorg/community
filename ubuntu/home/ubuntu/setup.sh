@@ -41,6 +41,13 @@ cd $HOME
 git clone https://github.com/stellularorg/crangon
 cd crangon
 
+# apply patch until crangon is fixed
+git checkout c92cedc0c29912d823a4bb8e1cc049a11924d5d6
+wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/patches/dorsal.patch
+git am < dorsal.patch
+rm dorsal.patch
+
+# ...
 ln -s $HOME/guppy/main.db main.db
 bun i
 just build sqlite
