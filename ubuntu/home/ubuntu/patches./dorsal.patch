@@ -1,0 +1,18 @@
+---
+ Cargo.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Cargo.toml b/Cargo.toml
+index 23389d5..7f57d43 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -35,5 +35,5 @@ actix-cors = "0.7.0"
+ askama = "0.12.1"
+ sqlx = "0.7.4"
+ regex = "1.10.4"
+-dorsal = { version = "0.1.3-1", default-features = false }
++dorsal = { version = "0.1.3", default-features = false }
+ sauropod = "0.1.1"
+-- 
+2.45.2
+
