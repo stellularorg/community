@@ -36,6 +36,10 @@ touch main.db
 bun i
 just build sqlite
 
+# .env
+wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/guppy/.env
+echo "Edit the Crangon config with \"vim /home/ubuntu/guppy/.env\""
+
 # crangon
 cd $HOME
 git clone https://github.com/stellularorg/crangon
@@ -51,6 +55,10 @@ rm dorsal.patch
 ln -s $HOME/guppy/main.db main.db
 bun i
 just build sqlite
+
+# .env
+wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/crangon/.env
+echo "Edit the Crangon config with \"vim /home/ubuntu/crangon/.env\""
 
 # scripts
 cd $HOME
