@@ -21,7 +21,7 @@ fi
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 . "$HOME/.cargo/env"
 
-cargo install just
+cargo install just sproc
 
 # redis
 sudo snap install redis
@@ -70,10 +70,10 @@ wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/scri
 chmod +x run-crangon.sh
 chmod +x run-guppy.sh
 
-# services
-cd /etc/systemd/system
-sudo wget https://github.com/stellularorg/community/raw/master/ubuntu/etc/systemd/system/crangon.service
-sudo wget https://github.com/stellularorg/community/raw/master/ubuntu/etc/systemd/system/guppy.service
+# sproc
+cd $HOME/.config/sproc
+sproc pin services_custom.toml
+sproc run-all
 
 # remove self
 cd $HOME
