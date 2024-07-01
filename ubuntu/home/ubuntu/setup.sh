@@ -65,7 +65,9 @@ chmod +x run-crangon.sh
 chmod +x run-guppy.sh
 
 # sproc
+mkdir $HOME/.config/sproc
 cd $HOME/.config/sproc
+wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/.config/sproc/services_custom.toml
 sproc pin services_custom.toml
 sproc run-all
 
