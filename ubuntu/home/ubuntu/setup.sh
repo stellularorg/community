@@ -59,8 +59,8 @@ cd $HOME
 mkdir scripts
 cd scripts
 
-wget https://github.com/stellularorg/community/blob/master/ubuntu/home/ubuntu/scripts/run-crangon.sh
-wget https://github.com/stellularorg/community/blob/master/ubuntu/home/ubuntu/scripts/run-guppy.sh
+wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/scripts/run-crangon.sh
+wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/scripts/run-guppy.sh
 chmod +x run-crangon.sh
 chmod +x run-guppy.sh
 
