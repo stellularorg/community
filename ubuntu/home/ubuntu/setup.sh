@@ -2,7 +2,7 @@
 # networking is manual
 
 # deps
-sudo apt install build-essential pkg-config unzip libssl-dev nodejs npm
+sudo apt-get install build-essential pkg-config unzip libssl-dev nodejs npm -y
 
 cd $HOME
 curl -fsSL https://bun.sh/install | bash
@@ -59,8 +59,8 @@ cd $HOME
 mkdir scripts
 cd scripts
 
-wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/scripts/run-crangon.sh
-wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/scripts/run-guppy.sh
+wget https://github.com/stellularorg/community/blob/master/ubuntu/home/ubuntu/scripts/run-crangon.sh
+wget https://github.com/stellularorg/community/blob/master/ubuntu/home/ubuntu/scripts/run-guppy.sh
 chmod +x run-crangon.sh
 chmod +x run-guppy.sh
 
