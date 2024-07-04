@@ -24,7 +24,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install just sproc
 
 # redis
-sudo snap install redis
+sudo apt install redis-server
 sudo systemctl enable --now redis
 
 # guppy
