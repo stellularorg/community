@@ -25,7 +25,7 @@ cargo install just sproc
 
 # redis
 sudo snap install redis
-sudo systemctl enable --now redis-server
+sudo systemctl enable --now redis
 
 # guppy
 cd $HOME
