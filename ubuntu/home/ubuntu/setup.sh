@@ -30,6 +30,14 @@ $CARGO install just sproc
 export SPROC="$HOME/.cargo/bin/sproc"
 export JUST="$HOME/.cargo/bin/just"
 
+# make sure .config exists
+if [ ! -d $HOME/.config ]; then
+    mkdir $HOME/.config
+    echo ".config created"
+else
+    echo ".config exists"
+fi
+
 # redis
 sudo apt install redis-server
 sudo systemctl enable --now redis-server
