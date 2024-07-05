@@ -2,12 +2,16 @@
 # networking is manual
 
 # deps
-sudo apt-get install build-essential pkg-config unzip libssl-dev nodejs npm -y
+sudo apt update
+sudo apt-get install build-essential pkg-config unzip libssl-dev -y
+sudo apt install nodejs npm -y
 
 cd $HOME
 curl -fsSL https://bun.sh/install | bash
 echo "export BUN_INSTALL=\"$HOME/.bun\"\nexport PATH=\"$BUN_INSTALL/bin:\$PATH\"" >> .bashrc
 source ~/.bashrc
+
+export BUN="$HOME/.bun/bin/bun"
 
 # use bunx if we have it, alias npx as bunx if we don't
 if [ ! -f $HOME/.bun/bin/bunx ]; then
@@ -21,7 +25,10 @@ fi
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 . "$HOME/.cargo/env"
 
-cargo install just sproc
+export CARGO="$HOME/.cargo/bin/cargo"
+$CARGO install just sproc
+export SPROC="$HOME/.cargo/bin/sproc"
+export JUST="$HOME/.cargo/bin/just"
 
 # redis
 sudo apt install redis-server
@@ -33,8 +40,8 @@ git clone https://github.com/stellularorg/guppy
 cd guppy
 
 touch main.db
-bun i
-just build sqlite
+$BUN i
+$JUST build sqlite
 
 # .env
 wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/guppy/.env
@@ -47,8 +54,8 @@ cd crangon
 
 # ...
 ln -s $HOME/guppy/main.db main.db
-bun i
-just build sqlite
+$BUN i
+$JUST build sqlite
 
 # .env
 wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/crangon/.env
@@ -68,8 +75,9 @@ chmod +x run-guppy.sh
 mkdir $HOME/.config/sproc
 cd $HOME/.config/sproc
 wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/.config/sproc/services_custom.toml
-sproc pin services_custom.toml
-sproc run-all
+
+$SPROC pin services_custom.toml
+$SPROC run-all
 
 # remove self
 cd $HOME
