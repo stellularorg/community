@@ -75,9 +75,10 @@ cd $HOME/.config/sproc
 wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/.config/sproc/services_custom.toml
 
 $SPROC pin services_custom.toml
+$SPROC install swmff.org sproc
 $SPROC install swmff.org crangon
 $SPROC install swmff.org guppy
-$SPROC run-all
+$SPROC run sproc crangon guppy
 
 # remove self
 cd $HOME
