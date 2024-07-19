@@ -2,10 +2,5 @@
 port = 6374
 key = "crangondeploy"
 
-[services.crangon]
-command = "/home/ubuntu/scripts/run-crangon.sh"
-working_directory = "/home/ubuntu/crangon"
-
-[services.guppy]
-command = "/home/ubuntu/scripts/run-guppy.sh"
-working_directory = "/home/ubuntu/guppy"
+[server.registry]
+enabled = false
