@@ -69,22 +69,14 @@ $JUST build sqlite
 wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/crangon/.env
 echo "Edit the Crangon config with \"vim /home/ubuntu/crangon/.env\""
 
-# scripts
-cd $HOME
-mkdir scripts
-cd scripts
-
-wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/scripts/run-crangon.sh
-wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/scripts/run-guppy.sh
-chmod +x run-crangon.sh
-chmod +x run-guppy.sh
-
 # sproc
 mkdir $HOME/.config/sproc
 cd $HOME/.config/sproc
 wget https://raw.githubusercontent.com/stellularorg/community/master/ubuntu/home/ubuntu/.config/sproc/services_custom.toml
 
 $SPROC pin services_custom.toml
+$SPROC install swmff.org crangon
+$SPROC install swmff.org guppy
 $SPROC run-all
 
 # remove self
