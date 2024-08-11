@@ -6,11 +6,11 @@ key = "crangondeploy"
 enabled = false
 
 [services.crangon]
-command = "PORT=8080 ./target/release/crangon"
+command = "PORT=8080 /home/ubuntu/crangon/target/release/crangon"
 working_directory = "/home/ubuntu/crangon"
 restart = true
 
 [services.guppy]
-command = "./target/release/guppy --port 8080"
+command = "/home/ubuntu/guppy/target/release/guppy --port 8080"
 working_directory = "/home/ubuntu/guppy"
 restart = true
