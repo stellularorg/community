@@ -7,10 +7,10 @@ enabled = false
 
 [services.crangon]
 command = "PORT=8080 ./target/release/crangon"
-working_directory = "~/crangon"
+working_directory = "/home/ubuntu/crangon"
 restart = true
 
 [services.guppy]
 command = "./target/release/guppy --port 8080"
-working_directory = "~/guppy"
+working_directory = "/home/ubuntu/guppy"
 restart = true
