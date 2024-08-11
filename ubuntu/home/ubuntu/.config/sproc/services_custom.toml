@@ -4,3 +4,13 @@ key = "crangondeploy"
 
 [server.registry]
 enabled = false
+
+[services.crangon]
+command = "PORT=8080 ./target/release/crangon"
+working_directory = "~/crangon"
+restart = true
+
+[services.guppy]
+command = "./target/release/guppy --port 8080"
+working_directory = "~/guppy"
+restart = true
