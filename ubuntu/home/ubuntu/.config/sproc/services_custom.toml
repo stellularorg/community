@@ -11,6 +11,6 @@ working_directory = "/home/ubuntu/crangon"
 restart = true
 
 [services.guppy]
-command = "/home/ubuntu/guppy/target/release/guppy --port 8080"
+command = "/home/ubuntu/guppy/target/release/guppy --port 8081"
 working_directory = "/home/ubuntu/guppy"
 restart = true
